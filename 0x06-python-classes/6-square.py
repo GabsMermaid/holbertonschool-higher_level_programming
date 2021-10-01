@@ -2,8 +2,6 @@
 """
 Square class definition
 """
-
-
 class Square:
     """"
     Square class with private instance attribute size
@@ -19,7 +17,6 @@ class Square:
         else:
             self.size = size
             self.position = position
-
     @property
     def size(self):
         """size: size of the square
@@ -29,7 +26,6 @@ class Square:
              ValueError
         """
         return (self.__size)
-
     @size.setter
     def size(self, value):
         """size: size of the square
@@ -43,14 +39,12 @@ class Square:
             raise ValueError("size must be >= 0")
         else:
             self.__size = value
-
     @property
     def position(self):
         """
         position: gives position of the square
         """
         return self.__position
-
     @position.setter
     def position(self, value):
         """
@@ -60,7 +54,6 @@ class Square:
             self.__position = value
         elif not self._tuple_(value):
             raise TypeError("position must be a tuple of 2 positive integers")
-
     def _tuple_(self, position):
         """
         check if it is a tuple and +ive integer
@@ -73,13 +66,11 @@ class Square:
             return False
         else:
             return True
-
     def area(self):
         """
         Returns area of the square instance
         """
         return (self.size ** 2)
-
     def my_print(self):
         """
         prints to the stdout square with # or empty line if 0
