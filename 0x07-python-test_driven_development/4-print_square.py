@@ -2,6 +2,8 @@
 """
 This is "4-print_square" module.
 """
+
+
 def print_square(size):
     """prints a square with "#"'s that has a length of size """
     if type(size) is not int:
