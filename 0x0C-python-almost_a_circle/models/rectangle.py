@@ -78,9 +78,9 @@ class Rectangle(Base):
 
     def display(self):
         """print Rectangle in stdout with char '#'"""
-        print(("\n" * self.__y) + 
-                "\n".join(((" " * self.__x) + ("#" * self.__width))
-                        for i in range(self.__height)))
+        print(("\n" * self.__y) + "\n".join(((" \
+               " * self.__x) + ("#" * self.__width))
+                    for i in range(self.__height)))
 
     def __str__(self):
         """Override the __str__"""
