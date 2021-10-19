@@ -3,7 +3,9 @@
 Module contains "Base" class
 """
 
+
 import json
+
 
 class Base:
     """Base class"""
