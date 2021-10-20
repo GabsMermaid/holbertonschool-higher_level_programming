@@ -25,6 +25,13 @@ class Base:
             list_dictionaries = []
         return json.dumps(list_dictionaries)
 
+    @staticmethod
+    def from_json_string(json_string):
+        """return list of JSON string representation json_string"""
+        if json_string is None or len(json_string) == 0:
+            return []
+        return json.loads(json_string)
+
     @classmethod
     def save_to_file(cls, list_objs):
         """write JSON string representation, list_objs to file"""
@@ -35,3 +42,26 @@ class Base:
                 lo.append(cls.to_dictionary(i))
         with open(filename, 'w') as f:
             f.write(cls.to_json_string(lo))
+
+    @classmethod
+    def create(cls, **dictionary):
+        """return instance with all attributes already set"""
+        if cls.__name__ is "Rectangle":
+            dummy = cls(1, 1)
+        elif cls.__name__ is "Square":
+            dummy = cls(1)
+        dummy.update(**dictionary)
+        return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        filename = cls.__name__ + ".json"
+        l = []
+        try:
+            with open(filename, 'r') as f:
+                l = cls.from_json_string(f.read())
+            for i, e in enumerate(l):
+                l[i] = cls.create(**l[i])
+        except:
+            pass
+        return l
