@@ -17,8 +17,8 @@ class Test_Base(unittest.TestCase):
     3.assigning ID bassed on assign argument*
     4.JSON string passing None*
     5.JSON string passing []*
-    6.JSON string passing [] with {}
-    7.JSON string passing [] with {} return exist
+    6.JSON string passing [] with {}*
+    7.JSON string passing [] with {} return exist*
     8.from JSON (same as 4, 5, 6 & 7)
     """
 
@@ -39,4 +39,9 @@ class Test_Base(unittest.TestCase):
         self.assertEqual(self.a_base.to_json_string(None), '[]')
         self.assertEqual(self.a_base.to_json_string([]), '[]')
         self.assertTrue(type(self.a_base.to_json_string([{ 'id': 12 }])), str)
+
+    def test_from_JSON_str(self):
+        self.assertEqual(self.a_base.from_json_string(None), [])
+        self.assertEqual(self.a_base.from_json_string([]), [])
+        self.assertTrue(type(self.a_base.to_json_string([{ "id": 89 }])), str)
 
