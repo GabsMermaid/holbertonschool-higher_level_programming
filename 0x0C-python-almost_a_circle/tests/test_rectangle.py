@@ -5,7 +5,7 @@ Test file for Rectangle class
 
 import unittest
 from tests import *
-from models.Base import Base
+from models.base import Base
 from models.rectangle import Rectangle
 
 
@@ -32,3 +32,7 @@ class Test_Rectangle(unittest.TestCase):
 
     def test_init(self):
         self.assertEqual(self.a_rectangle.id, 1)
+        self.assertEqual(self.b_rectangle.id, 2)
+
+    def test_RectangleArg(self):
+        self.assertTrue(type(self.a_rectangle), Rectangle(1, 2))
