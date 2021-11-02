@@ -30,9 +30,5 @@ class Test_Rectangle(unittest.TestCase):
         self.c_rectangle = Rectangle(1, 2, 3, 4)
         self.d_rectangle = Rectangle(1, 2, 3, 4, 5)
 
-    def test_init(self):
-        self.assertEqual(self.a_rectangle.id, 1)
-        self.assertEqual(self.b_rectangle.id, 2)
-
     def test_RectangleArg(self):
         self.assertTrue(type(self.a_rectangle), Rectangle(1, 2))
