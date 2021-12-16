@@ -7,4 +7,4 @@ for (const key in dict) {
   }
   newdict[dict[key]].push(key);
 }
-console.log(newdict)
+console.log(newdict);
